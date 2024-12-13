@@ -94,6 +94,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             </div>
 
             <hr />
+                  <p className="text-xl font-semibold">{`Where you’ll be`}</p>
 
             <Map center={coordinates} />
         </div>

@@ -66,6 +66,8 @@ const ListingCard:React.FC<ListingCardProps> = ({
   }, [reservation]);
     return ( 
 
+      
+
         <div
         onClick={() => router.push(`/listings/${data.id}`)}
         className="col-span-1 cursor-pointer group"
@@ -79,7 +81,6 @@ const ListingCard:React.FC<ListingCardProps> = ({
             ">
               <Image
               fill
-              priority
               sizes="100%"
               className="
                 object-cover 
@@ -88,10 +89,9 @@ const ListingCard:React.FC<ListingCardProps> = ({
                 group-hover:scale-110 
                 transition
               "
-              src={data.imageSrc || "/placeholder-image.jpeg"}
+              src={data.imageSrc}
               alt="Listing"
             />
-
             <div
             className="
             absolute

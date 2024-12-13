@@ -6,7 +6,7 @@ import Heading from "../Heading";
 import { SafeUser } from "@/app/types";
 import Image from "next/image";
 import HeartButton from "../HeartButton";
-
+import { motion } from "framer-motion";
 
 
 interface IListingHeadProps {
@@ -46,13 +46,16 @@ const ListingHead:React.FC<IListingHeadProps> = ({
         
         />
 
-        <div className="
-            w-full
-          h-[60vh]
-          overflow-hidden
-          rounded-xl
-          relative
-          ">
+        <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className="w-full h-[60vh] overflow-hidden rounded-xl relative"
+      >
             <Image
                 alt="Image"
                 src={imageSrc}
@@ -72,9 +75,10 @@ const ListingHead:React.FC<IListingHeadProps> = ({
 
             </div>
 
+            </motion.div>
 
 
-        </div>
+
 
         </>
      );
